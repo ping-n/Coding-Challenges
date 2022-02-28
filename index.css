@@ -1,5 +1,9 @@
 /* base styles */
 
+:root {
+  --colour-green: #07cc81;
+}
+
 body {
   background: #f2f2f2;
   text-align: center;
@@ -26,3 +30,19 @@ form input {
 }
 
 /* solution styles */
+.tick {
+  color: var(--colour-green);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease-in;
+}
+
+.valid .tick {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+form .valid input {
+  border-color: var(--colour-green);
+  outline: var(--colour-green);
+}
