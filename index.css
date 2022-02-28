@@ -1,12 +1,13 @@
 /* start styles */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=VT323&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=VT323&display=swap");
 
 body {
   margin: 0;
   background: #444;
   font-family: "Poppins";
 }
-li, ul {
+li,
+ul {
   list-style-type: none;
   padding: 0;
 }
@@ -16,11 +17,75 @@ main {
 }
 
 /* solution styles */
+header {
+  background: #333;
+  color: #eee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
 
+.burger {
+  position: relative;
+  font-size: 1.2em;
+  cursor: pointer;
+  z-index: 1;
+}
 
+.burger span {
+  display: block;
+  width: 30px;
+  height: 2px;
+  background: #eee;
+  margin-bottom: 5px;
+}
 
+nav {
+  padding: 20px;
+  padding-top: 80px;
+  width: 200px;
+  height: 100%;
+  box-sizing: border-box;
+  background: #222;
+  position: absolute;
+  top: 0;
+  left: -200px;
+  z-index: 0;
+}
+
+nav a {
+  display: block;
+  color: #eee;
+  margin-bottom: 6px;
+  font-size: 1.2em;
+  cursor: pointer;
+  text-decoration: none;
+}
 /* open state */
+nav.open {
+  left: 0;
+}
 
+.burger.open span:nth-child(1) {
+  transform: rotate(45deg) translateY(10px);
+}
 
+.burger.open span:nth-child(2) {
+  opacity: 0;
+  width: 0;
+}
+
+.burger.open span:nth-child(3) {
+  transform: rotate(-45deg) translateY(-10px);
+}
 
 /* transitions */
+nav.open {
+  transition: left 0.3s ease-in;
+}
+
+.burger.open span {
+  transition: all ease-in 0.3s;
+}
